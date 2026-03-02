@@ -87,6 +87,50 @@ export const PROJECTS = [
       "Zero Performance Impact",
     ],
   },
+  {
+    id: 5,
+    title: "mama.ok",
+    type: "AI · HealthTech · Full Stack",
+    year: "2024",
+    url: "https://mama-ok.vercel.app/",
+    github: null,
+    status: "live" as const,
+    color: "#ec4899",
+    tags: ["Next.js", "AI", "Healthcare", "TypeScript", "Wellness"],
+    summary:
+      "Trusted pregnancy & postpartum companion connecting mothers with certified consultants and AI-powered health guidance.",
+    description:
+      "Your trusted pregnancy & postpartum companion — connecting mothers with certified consultants, AI-powered health guidance, month-by-month wellness tracking, and hospital selection. Because every mother deserves expert support, warmth, and care, every step of the way.",
+    highlights: [
+      "AI Health Guidance",
+      "Certified Consultants",
+      "Month-by-Month Tracking",
+      "Hospital Selection",
+      "Postpartum Support",
+    ],
+  },
+  {
+    id: 6,
+    title: "OSS Compass",
+    type: "AI · Developer Tools · GitHub",
+    year: "2024",
+    url: "https://open-source-santa-7jnj.vercel.app/",
+    github: null,
+    status: "live" as const,
+    color: "#a78bfa",
+    tags: ["Next.js", "AI", "GitHub API", "TypeScript", "Open Source"],
+    summary:
+      "AI-powered platform matching developers to open source projects they'll actually stick with based on skills and interests.",
+    description:
+      "Matches developers to open source projects they'll actually stick with. Tell it your skill level, languages, and interests — it finds real, active GitHub repos, explains why each one fits you, and gives you a specific first contribution to make. No more stale 'good first issue' tags or guesswork.",
+    highlights: [
+      "Smart Project Matching",
+      "Active Repo Discovery",
+      "Personalized Fit Analysis",
+      "First Contribution Guidance",
+      "Skills-Based Filtering",
+    ],
+  },
 ];
 
 export const SKILLS: Record<string, string[]> = {
@@ -98,8 +142,8 @@ export const SKILLS: Record<string, string[]> = {
 };
 
 export const STATS = [
-  { num: "4+", label: "Projects Shipped" },
-  { num: "3+", label: "AI Systems Built" },
+  { num: "6+", label: "Projects Shipped" },
+  { num: "5+", label: "AI Systems Built" },
   { num: "1", label: "Chrome Extension Published" },
   { num: "∞", label: "Problems Left to Solve" },
 ];
