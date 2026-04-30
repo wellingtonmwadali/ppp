@@ -15,20 +15,33 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden mesh-gradient"
       style={{ padding: "8rem 5%" }}
     >
-      {/* Glow */}
+      {/* Gradient divider top */}
+      <div className="gradient-divider absolute top-0 left-0 right-0" />
+
+      {/* Abstract orbs */}
       <div
-        className="absolute pointer-events-none"
+        className="abstract-orb animate-orb-2"
         style={{
-          top: "50%",
+          top: "20%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "600px",
-          height: "600px",
+          transform: "translateX(-50%)",
+          width: "700px",
+          height: "700px",
           background:
-            "radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(99,102,241,0.09) 0%, transparent 60%)",
+        }}
+      />
+      <div
+        className="abstract-orb animate-orb-1"
+        style={{
+          bottom: "0%",
+          right: "-5%",
+          width: "300px",
+          height: "300px",
+          background: "radial-gradient(circle, rgba(34,211,238,0.07) 0%, transparent 65%)",
         }}
       />
 
@@ -51,7 +64,7 @@ export default function Contact() {
         >
           Let&apos;s build
           <br />
-          <span style={{ color: "#6366f1" }}>something real.</span>
+          <span className="text-gradient-abstract">something real.</span>
         </h2>
 
         {/* Sub */}
@@ -71,13 +84,19 @@ export default function Contact() {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "1px",
-            background: "rgba(99,102,241,0.12)",
-            border: "1px solid rgba(99,102,241,0.12)",
+            background: "rgba(99,102,241,0.18)",
+            border: "1px solid rgba(99,102,241,0.2)",
           }}
           id="contact-cards"
         >
           {/* Email card */}
-          <div style={{ background: "#0e0e1a", padding: "1.8rem" }}>
+          <div
+            style={{
+              background: "rgba(10,10,22,0.8)",
+              backdropFilter: "blur(20px)",
+              padding: "1.8rem",
+            }}
+          >
             <div
               className="font-mono-custom text-[0.6rem] tracking-[0.15em] uppercase mb-2"
               style={{ color: "#64748b" }}
@@ -95,7 +114,7 @@ export default function Contact() {
               className="font-mono-custom text-[0.68rem] tracking-wider transition-all duration-200"
               style={{
                 background: "transparent",
-                border: "1px solid rgba(99,102,241,0.2)",
+                border: "1px solid rgba(99,102,241,0.25)",
                 color: copied ? "#4ade80" : "#6366f1",
                 padding: "0.4rem 0.8rem",
                 borderRadius: "2px",
@@ -107,7 +126,13 @@ export default function Contact() {
           </div>
 
           {/* WhatsApp card */}
-          <div style={{ background: "#0e0e1a", padding: "1.8rem" }}>
+          <div
+            style={{
+              background: "rgba(10,10,22,0.8)",
+              backdropFilter: "blur(20px)",
+              padding: "1.8rem",
+            }}
+          >
             <div
               className="font-mono-custom text-[0.6rem] tracking-[0.15em] uppercase mb-2"
               style={{ color: "#64748b" }}
@@ -127,7 +152,7 @@ export default function Contact() {
               className="font-mono-custom text-[0.68rem] tracking-wider inline-block transition-opacity duration-200"
               style={{
                 background: "rgba(74,222,128,0.1)",
-                border: "1px solid rgba(74,222,128,0.2)",
+                border: "1px solid rgba(74,222,128,0.25)",
                 color: "#4ade80",
                 padding: "0.4rem 0.8rem",
                 borderRadius: "2px",
@@ -149,14 +174,16 @@ export default function Contact() {
               href={l.url}
               target={l.url.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="font-mono-custom text-xs tracking-wider transition-colors duration-200"
+              className="font-mono-custom text-xs tracking-wider transition-all duration-200"
               style={{ color: "#64748b", textDecoration: "none" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "#6366f1")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "#64748b")
-              }
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#6366f1";
+                e.currentTarget.style.textShadow = "0 0 12px rgba(99,102,241,0.5)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#64748b";
+                e.currentTarget.style.textShadow = "none";
+              }}
             >
               {l.label} ↗
             </a>

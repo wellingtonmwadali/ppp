@@ -16,11 +16,11 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Wellington Mwadali — Full Stack Developer",
+  title: "Wellington Mwadali — AI Full Stack Developer",
   description:
-    "Wellington Mwadali is a full stack developer building AI systems, SaaS platforms, blockchain solutions, and custom software. Available for new projects.",
+    "Wellington Mwadali is an AI full stack developer building AI systems, SaaS platforms, blockchain solutions, and custom software. Available for new projects.",
   keywords: [
-    "Full Stack Developer",
+    "AI Full Stack Developer",
     "Wellington Mwadali",
     "Next.js",
     "React",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Wellington Mwadali", url: "https://github.com/wellingtonmwadali" }],
   openGraph: {
-    title: "Wellington Mwadali — Full Stack Developer",
+    title: "Wellington Mwadali — AI Full Stack Developer",
     description:
       "Building AI systems, SaaS platforms, blockchain solutions, and custom software.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wellington Mwadali — Full Stack Developer",
+    title: "Wellington Mwadali — AI Full Stack Developer",
     description: "Building AI systems, SaaS platforms, blockchain solutions, and custom software.",
   },
   robots: { index: true, follow: true },

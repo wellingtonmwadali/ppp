@@ -26,10 +26,11 @@ function ProjectRow({
     <article
       className="reveal transition-all duration-300"
       style={{
-        background: expanded ? "#0e0e1a" : "#080810",
+        background: expanded ? "rgba(14,14,30,0.85)" : "transparent",
         borderLeft: expanded
           ? `2px solid ${project.color}`
           : "2px solid transparent",
+        backdropFilter: expanded ? "blur(8px)" : "none",
       }}
     >
       {/* Row header */}
@@ -249,10 +250,35 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="relative"
+      className="relative overflow-hidden mesh-gradient"
       style={{ padding: "8rem 5%" }}
     >
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+      {/* Abstract decorative orbs */}
+      <div
+        className="abstract-orb animate-orb-2"
+        style={{
+          top: "-10%",
+          right: "-5%",
+          width: "500px",
+          height: "500px",
+          background: "radial-gradient(circle, rgba(99,102,241,0.09) 0%, transparent 65%)",
+        }}
+      />
+      <div
+        className="abstract-orb animate-orb-1"
+        style={{
+          bottom: "5%",
+          left: "-8%",
+          width: "400px",
+          height: "400px",
+          background: "radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Top divider */}
+      <div className="gradient-divider mb-0 absolute top-0 left-0 right-0" />
+
+      <div className="relative z-10" style={{ maxWidth: "1100px", margin: "0 auto" }}>
         {/* Header */}
         <div className="reveal mb-20">
           <div
@@ -267,17 +293,20 @@ export default function Work() {
           >
             Things I&apos;ve
             <br />
-            <span style={{ color: "#6366f1" }}>actually built.</span>
+            <span className="text-gradient-abstract">actually built.</span>
           </h2>
         </div>
 
         {/* Project list */}
         <div
+          className="glass"
           style={{
             display: "flex",
             flexDirection: "column",
             gap: "1px",
-            background: "rgba(99,102,241,0.15)",
+            background: "rgba(8,8,22,0.7)",
+            backdropFilter: "blur(20px)",
+            border: "1px solid rgba(99,102,241,0.18)",
           }}
         >
           {PROJECTS.map((p, i) => (

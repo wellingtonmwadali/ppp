@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { SOCIAL_LINKS } from "@/lib/data";
+import ThreeScene from "@/components/ThreeScene";
 
-const TYPED_TEXT = "Full Stack Developer";
+const TYPED_TEXT = "AI Full Stack Developer";
 
 export default function Hero() {
   const [typed, setTyped] = useState("");
@@ -29,30 +30,41 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ padding: "8rem 5% 5rem" }}
     >
-      {/* Grid background */}
+      {/* Three.js 3D abstract background */}
+      <ThreeScene />
+
+      {/* Grid overlay */}
       <div className="absolute inset-0 grid-pattern pointer-events-none" />
 
-      {/* Glow orbs */}
+      {/* Abstract orbs — layered depth */}
       <div
-        className="absolute pointer-events-none animate-float"
+        className="abstract-orb animate-orb-1"
         style={{
-          top: "20%",
-          right: "10%",
-          width: "400px",
-          height: "400px",
-          background:
-            "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)",
+          top: "8%",
+          right: "12%",
+          width: "520px",
+          height: "520px",
+          background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 65%)",
         }}
       />
       <div
-        className="absolute pointer-events-none animate-float-reverse"
+        className="abstract-orb animate-orb-2"
         style={{
-          bottom: "20%",
-          left: "5%",
-          width: "300px",
-          height: "300px",
-          background:
-            "radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 70%)",
+          bottom: "10%",
+          left: "0%",
+          width: "380px",
+          height: "380px",
+          background: "radial-gradient(circle, rgba(34,211,238,0.1) 0%, transparent 65%)",
+        }}
+      />
+      <div
+        className="abstract-orb animate-orb-3"
+        style={{
+          top: "55%",
+          right: "35%",
+          width: "260px",
+          height: "260px",
+          background: "radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 65%)",
         }}
       />
 
@@ -62,11 +74,12 @@ export default function Hero() {
           className="inline-flex items-center gap-2 font-mono-custom text-xs mb-10 animate-fade-up"
           style={{
             color: "#4ade80",
-            border: "1px solid rgba(74,222,128,0.2)",
-            background: "rgba(74,222,128,0.05)",
+            border: "1px solid rgba(74,222,128,0.25)",
+            background: "rgba(74,222,128,0.06)",
             padding: "0.35rem 0.9rem",
             borderRadius: "100px",
             animationDelay: "0.1s",
+            backdropFilter: "blur(10px)",
           }}
         >
           <span
@@ -99,7 +112,7 @@ export default function Hero() {
         >
           Wellington
           <br />
-          <span style={{ color: "#6366f1" }}>Mwadali</span>
+          <span className="text-gradient-abstract">Mwadali</span>
         </h1>
 
         {/* Typed role */}
@@ -109,6 +122,7 @@ export default function Hero() {
             fontSize: "clamp(1rem, 2.5vw, 1.4rem)",
             color: "#22d3ee",
             animationDelay: "0.3s",
+            textShadow: "0 0 20px rgba(34,211,238,0.4)",
           }}
         >
           <span style={{ color: "#64748b" }}>&gt; </span>
@@ -138,14 +152,16 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Bio */}
+        {/* Bio — glass card */}
         <p
-          className="font-sans-custom font-light leading-relaxed mb-12 animate-fade-up"
+          className="font-sans-custom font-light leading-relaxed mb-12 animate-fade-up glass-subtle"
           style={{
             fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
             color: "#94a3b8",
             maxWidth: "520px",
             animationDelay: "0.4s",
+            padding: "1.2rem 1.5rem",
+            borderRadius: "4px",
           }}
         >
           I build end-to-end digital systems — from intelligent AI agents to
@@ -164,18 +180,20 @@ export default function Hero() {
             className="font-mono-custom text-sm font-medium tracking-wider transition-all duration-200"
             style={{
               color: "#080810",
-              background: "#6366f1",
+              background: "linear-gradient(135deg, #6366f1, #818cf8)",
               padding: "0.8rem 1.8rem",
               borderRadius: "2px",
               textDecoration: "none",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#818cf8";
+              e.currentTarget.style.background = "linear-gradient(135deg, #818cf8, #a78bfa)";
               e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "0 8px 30px rgba(99,102,241,0.4)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = "#6366f1";
+              e.currentTarget.style.background = "linear-gradient(135deg, #6366f1, #818cf8)";
               e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
             }}
           >
             view_work() →
@@ -187,19 +205,24 @@ export default function Hero() {
             className="font-mono-custom text-sm font-medium tracking-wider transition-all duration-200"
             style={{
               color: "#f1f5f9",
-              background: "transparent",
+              background: "rgba(99,102,241,0.06)",
+              backdropFilter: "blur(12px)",
               padding: "0.8rem 1.8rem",
               borderRadius: "2px",
               textDecoration: "none",
-              border: "1px solid rgba(99,102,241,0.15)",
+              border: "1px solid rgba(99,102,241,0.22)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = "#6366f1";
-              e.currentTarget.style.color = "#6366f1";
+              e.currentTarget.style.color = "#818cf8";
+              e.currentTarget.style.background = "rgba(99,102,241,0.12)";
+              e.currentTarget.style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(99,102,241,0.15)";
+              e.currentTarget.style.borderColor = "rgba(99,102,241,0.22)";
               e.currentTarget.style.color = "#f1f5f9";
+              e.currentTarget.style.background = "rgba(99,102,241,0.06)";
+              e.currentTarget.style.transform = "translateY(0)";
             }}
           >
             let&apos;s_talk ↗

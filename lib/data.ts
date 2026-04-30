@@ -67,27 +67,27 @@ export const PROJECTS = [
   },
   {
     id: 4,
-    title: "ALX Multitone Magic",
-    type: "Browser Extension · Chrome",
-    year: "2024",
-    url: "https://chromewebstore.google.com/detail/alx-multitone-magic/ephimbbnijochfniplkonmebaknmjojm",
+    title: "GHS3 — Garage Management System",
+    type: "AI · Full Stack · SaaS Platform",
+    year: "2026",
+    url: "https://ghs3-bay.vercel.app/",
     github: null,
-    status: "published" as const,
-    color: "#818cf8",
-    tags: ["Chrome Extension", "JavaScript", "CSS", "UX Design"],
+    status: "live" as const,
+    color: "#f97316",
+    tags: ["Next.js", "TypeScript", "AI", "Tailwind", "Role-Based Access"],
     summary:
-      "A Chrome extension providing 9 custom themes to elevate the intranet experience.",
+      "AI-powered all-in-one garage management platform to manage vehicles, track jobs, handle invoicing, and grow automotive businesses.",
     description:
-      "Delivers red, green, navy-blue, black, teal, light-blue, pink, purple, and yellow themes — giving users control over their daily intranet environment with one click.",
+      "Purpose-built for automotive garages, body shops, and service centers. Features vehicle intake tracking, job card system, customer relations, booking & scheduling, reports & analytics, and secure role-based access for owners, managers, mechanics, and receptionists — all from a single dashboard.",
     highlights: [
-      "9 Custom Themes",
-      "One-Click Activation",
-      "Intranet Optimization",
-      "Chrome Web Store Published",
-      "Zero Performance Impact",
+      "Vehicle & Job Card Tracking",
+      "Booking & Scheduling",
+      "Role-Based Access Control",
+      "Revenue & Expense Reports",
+      "Automated Customer Notifications",
     ],
   },
-  {
+   {
     id: 5,
     title: "mama.ok",
     type: "AI · HealthTech · Full Stack",
@@ -109,7 +109,7 @@ export const PROJECTS = [
       "Postpartum Support",
     ],
   },
-  {
+    {
     id: 6,
     title: "OSS Compass",
     type: "AI · Developer Tools · GitHub",
@@ -131,6 +131,28 @@ export const PROJECTS = [
       "Skills-Based Filtering",
     ],
   },
+  {
+    id: 7,
+    title: "ALX Multitone Magic",
+    type: "Browser Extension · Chrome",
+    year: "2024",
+    url: "https://chromewebstore.google.com/detail/alx-multitone-magic/ephimbbnijochfniplkonmebaknmjojm",
+    github: null,
+    status: "published" as const,
+    color: "#818cf8",
+    tags: ["Chrome Extension", "JavaScript", "CSS", "UX Design"],
+    summary:
+      "A Chrome extension providing 9 custom themes to elevate the intranet experience.",
+    description:
+      "Delivers red, green, navy-blue, black, teal, light-blue, pink, purple, and yellow themes — giving users control over their daily intranet environment with one click.",
+    highlights: [
+      "9 Custom Themes",
+      "One-Click Activation",
+      "Intranet Optimization",
+      "Chrome Web Store Published",
+      "Zero Performance Impact",
+    ],
+  },
 ];
 
 export const SKILLS: Record<string, string[]> = {
@@ -142,7 +164,7 @@ export const SKILLS: Record<string, string[]> = {
 };
 
 export const STATS = [
-  { num: "6+", label: "Projects Shipped" },
+  { num: "7+", label: "Projects Shipped" },
   { num: "5+", label: "AI Systems Built" },
   { num: "1", label: "Chrome Extension Published" },
   { num: "∞", label: "Problems Left to Solve" },

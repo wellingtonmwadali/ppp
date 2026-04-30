@@ -48,11 +48,17 @@ export default function Nav() {
         className="fixed top-0 left-0 right-0 z-[800] flex items-center justify-between px-[5%] transition-all duration-500"
         style={{
           height: "60px",
-          background: scrolled ? "rgba(8,8,16,0.92)" : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
+          background: scrolled
+            ? "rgba(6,6,14,0.88)"
+            : "transparent",
+          backdropFilter: scrolled ? "blur(28px) saturate(180%)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(28px) saturate(180%)" : "none",
           borderBottom: scrolled
-            ? "1px solid rgba(99,102,241,0.15)"
+            ? "1px solid rgba(99,102,241,0.2)"
             : "1px solid transparent",
+          boxShadow: scrolled
+            ? "0 4px 30px rgba(0,0,0,0.4), 0 1px 0 rgba(99,102,241,0.1)"
+            : "none",
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -91,18 +97,20 @@ export default function Nav() {
             href="mailto:wellingtonmwadali@gmail.com"
             className="font-mono-custom text-xs font-medium tracking-wider transition-colors duration-200"
             style={{
-              color: "#080810",
-              background: "#6366f1",
+              color: "#fff",
+              background: "linear-gradient(135deg, #6366f1, #818cf8)",
               padding: "0.45rem 1rem",
               borderRadius: "2px",
               textDecoration: "none",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.background = "#818cf8")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.background = "#6366f1")
-            }
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "linear-gradient(135deg, #818cf8, #a78bfa)";
+              e.currentTarget.style.boxShadow = "0 4px 20px rgba(99,102,241,0.4)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "linear-gradient(135deg, #6366f1, #818cf8)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
           >
             hire_me
           </a>
@@ -124,7 +132,7 @@ export default function Nav() {
       {menuOpen && (
         <div
           className="fixed inset-0 z-[750] flex flex-col justify-center items-center gap-8"
-          style={{ background: "#080810" }}
+          style={{ background: "rgba(6,6,14,0.97)", backdropFilter: "blur(24px)" }}
         >
           {links.map((l, i) => (
             <button

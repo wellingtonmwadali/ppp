@@ -6,9 +6,35 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      style={{ padding: "8rem 5%", background: "#12121e" }}
+      className="relative overflow-hidden"
+      style={{ padding: "8rem 5%", background: "#0a0a14" }}
     >
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+      {/* Abstract orbs */}
+      <div
+        className="abstract-orb animate-orb-3"
+        style={{
+          top: "10%",
+          left: "5%",
+          width: "450px",
+          height: "450px",
+          background: "radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 65%)",
+        }}
+      />
+      <div
+        className="abstract-orb animate-orb-1"
+        style={{
+          bottom: "5%",
+          right: "0%",
+          width: "380px",
+          height: "380px",
+          background: "radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Gradient divider top */}
+      <div className="gradient-divider absolute top-0 left-0 right-0" />
+
+      <div className="relative z-10" style={{ maxWidth: "1100px", margin: "0 auto" }}>
         {/* Header */}
         <div className="reveal mb-20">
           <div
@@ -23,7 +49,7 @@ export default function Skills() {
           >
             The tools I
             <br />
-            <span style={{ color: "#6366f1" }}>think in.</span>
+            <span className="text-gradient-abstract">think in.</span>
           </h2>
         </div>
 
@@ -33,21 +59,27 @@ export default function Skills() {
           style={{
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "1px",
-            background: "rgba(99,102,241,0.12)",
-            border: "1px solid rgba(99,102,241,0.12)",
+            background: "rgba(99,102,241,0.15)",
+            border: "1px solid rgba(99,102,241,0.18)",
           }}
         >
           {Object.entries(SKILLS).map(([category, items]) => (
             <div
               key={category}
-              className="transition-colors duration-200 group"
-              style={{ background: "#0e0e1a", padding: "2rem" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "#13131f")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "#0e0e1a")
-              }
+              className="transition-all duration-300 group"
+              style={{
+                background: "rgba(10,10,22,0.75)",
+                backdropFilter: "blur(16px)",
+                padding: "2rem",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(99,102,241,0.08)";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(10,10,22,0.75)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
             >
               <div
                 className="font-mono-custom text-[0.62rem] tracking-[0.15em] uppercase mb-6"
@@ -68,7 +100,7 @@ export default function Skills() {
                 >
                   <span
                     className="w-1 h-1 rounded-full flex-shrink-0"
-                    style={{ background: "#6366f1" }}
+                    style={{ background: "#6366f1", boxShadow: "0 0 6px rgba(99,102,241,0.6)" }}
                   />
                   <span
                     className="font-mono-custom text-sm"
@@ -84,23 +116,34 @@ export default function Skills() {
 
         {/* Stats strip */}
         <div
-          className="reveal grid mt-5"
+          className="reveal grid mt-[1px]"
           style={{
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: "1px",
-            background: "rgba(99,102,241,0.12)",
-            border: "1px solid rgba(99,102,241,0.12)",
+            background: "rgba(99,102,241,0.15)",
+            border: "1px solid rgba(99,102,241,0.18)",
+            borderTop: "none",
           }}
         >
           {STATS.map((s) => (
             <div
               key={s.num}
-              className="text-center"
-              style={{ background: "#0e0e1a", padding: "2rem" }}
+              className="text-center transition-all duration-300"
+              style={{
+                background: "rgba(10,10,22,0.75)",
+                backdropFilter: "blur(16px)",
+                padding: "2rem",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(99,102,241,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(10,10,22,0.75)";
+              }}
             >
               <div
-                className="font-mono-custom font-bold leading-none mb-1.5"
-                style={{ fontSize: "2rem", color: "#6366f1" }}
+                className="font-mono-custom font-bold leading-none mb-1.5 text-gradient-abstract"
+                style={{ fontSize: "2rem" }}
               >
                 {s.num}
               </div>

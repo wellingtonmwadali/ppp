@@ -111,16 +111,80 @@
   /* Grid pattern */
   .grid-pattern {
     background-image: linear-gradient(
-        rgba(99, 102, 241, 0.05) 1px,
+        rgba(99, 102, 241, 0.04) 1px,
         transparent 1px
       ),
-      linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+      linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(
       ellipse at center,
       black 30%,
       transparent 75%
     );
+  }
+
+  /* Glassmorphism card */
+  .glass {
+    background: rgba(10, 10, 22, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(99, 102, 241, 0.18);
+  }
+
+  .glass-subtle {
+    background: rgba(8, 8, 16, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+  }
+
+  /* Abstract orbs (absolute positioned decorative blobs) */
+  .abstract-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+
+  /* 3D card tilt base */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s ease;
+    will-change: transform;
+  }
+
+  /* Mesh gradient overlay for sections */
+  .mesh-gradient {
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 75%, rgba(34, 211, 238, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(167, 139, 250, 0.04) 0%, transparent 60%);
+  }
+
+  /* Gradient divider line */
+  .gradient-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(99, 102, 241, 0.35) 30%,
+      rgba(34, 211, 238, 0.25) 70%,
+      transparent 100%
+    );
+  }
+
+  /* Neon glow text */
+  .text-glow-indigo {
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Abstract section label */
+  .section-eyebrow {
+    font-family: var(--font-mono), "Fira Code", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
   }
 
   /* Mono font utility */
@@ -139,8 +203,23 @@
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
   }
 
+  .glow-indigo-xl {
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.25), 0 0 120px rgba(99, 102, 241, 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.25);
+  }
+
   .text-gradient-indigo {
     background: linear-gradient(135deg, #6366f1, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-abstract {
+    background: linear-gradient(135deg, #6366f1 0%, #22d3ee 50%, #a78bfa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -203,4 +282,48 @@
 
 .animate-float-reverse {
   animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Abstract orb float animations */
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(30px, -40px) scale(1.08); }
+  66%       { transform: translate(-20px, 25px) scale(0.94); }
+}
+
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  40%       { transform: translate(-35px, 30px) scale(1.06); }
+  80%       { transform: translate(20px, -20px) scale(0.96); }
+}
+
+@keyframes orbDrift3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50%       { transform: translate(15px, -50px) scale(1.1); }
+}
+
+@keyframes gradientPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(99, 102, 241, 0.15); }
+  50%       { border-color: rgba(99, 102, 241, 0.4); }
+}
+
+.animate-orb-1 {
+  animation: orbDrift1 14s ease-in-out infinite;
+}
+
+.animate-orb-2 {
+  animation: orbDrift2 18s ease-in-out infinite;
+}
+
+.animate-orb-3 {
+  animation: orbDrift3 10s ease-in-out infinite;
+}
+
+.animate-gradient-pulse {
+  animation: gradientPulse 4s ease-in-out infinite;
 }
